@@ -17,7 +17,7 @@ int main()
         {
         case 'F':
         {
-            cout << "Je zbytecny nepotrebujeme, i nepotrebujeme, protoze cisla zadavame samy";
+            cout << "nelze pouzit cyklus for, nevime pocet opakovani";
         }
         break;
         case 'W':
