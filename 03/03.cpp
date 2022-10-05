@@ -17,7 +17,7 @@ int main()
         {
         case 'F':
         {
-            cout << "Je zbytecny nepotrebujeme pricitat icka zadavame sami cisla";
+            cout << "Je zbytecny nepotrebujeme, i nepotrebujeme, protoze cisla zadavame samy";
         }
         break;
         case 'W':
@@ -43,13 +43,14 @@ int main()
             if (pocet > 0)
             {
                 prumer = (double)soucet / pocet;
-                cout << "Prumer je " << prumer << endl;
+                cout << "Prumer je: " << prumer << endl;
             }
             else
             {
                 cout << "Zadne sude cislo" << endl;
             }
         }
+        break;
         case 'D':
         {
             int x;
@@ -57,28 +58,33 @@ int main()
             int pocet = 0;
             int soucet = 0;
             double prumer;
-            cout << " Zadavej nenulova cisla, 0 znamena jinec: \n";
+            cout << " Zadavej nenulova cisla, 0 znamena konec: \n";
             cin >> x;
-            do
+            if (x > 0)
             {
-                soucin *= x;
-                if (x % 2 == 0)
+                do
                 {
-                    soucet += x;
-                    ++pocet;
+                    soucin *= x;
+                    if (x % 2 == 0)
+                    {
+                        soucet += x;
+                        ++pocet;
+                    }
+                    cin >> x;
+                } while (x != 0);
+                cout << "Soucin je " << soucin << endl;
+                if (pocet > 0)
+                {
+                    prumer = (double)soucet / pocet;
+                    cout << "Prumer je: " << prumer << endl;
                 }
-                cin >> x;
-            } while (x != 0);
-            cout << "Soucin je " << soucin << endl;
-            if (pocet > 0)
-            {
-                prumer = (double)soucet / pocet;
-                cout << "Prumer je " << prumer << endl;
+                else
+                {
+                    cout << "Zadne sude cislo" << endl;
+                }
             }
-            else
-            {
-                cout << "Zadne sude cislo" << endl;
-            }
+            else cout << "zadne prvky v posloupnosti" << endl;
+           
         }
         break;
         default:

@@ -57,24 +57,20 @@ int main()
             double soucet = 0;
             cout << "Zadej cislo n: ";
             cin >> n;
+            if (n > 0) //ptam se, zda cyklus do while muze probehnout, alespon jednou - pak ho spustim.
+            {
+                do {
+                    double nahodneCislo = 10 + (100 - 10) * (double)rand() / (RAND_MAX + 1);
+                    soucet += nahodneCislo;
+                    cout << nahodneCislo << endl;
 
-            do {
-                double nc = 10 + (100 - 10) * (double)rand() / (RAND_MAX + 1);
-                soucet += nc;
-                cout << nc << endl;
-                if (i == 0)
-                {
-                  
-                    soucet = 0;
-                }
-                else
-                {
-                    cout << nc;
-                }
-
-                ++i;
-            } while (i < n);
-            cout << "Soucet je " << soucet << endl;
+                    ++i;
+                } while (i < n);
+                cout << "Soucet je " << soucet << endl;
+            }
+            else cout << "0 prvku v posloupnosti." << endl;
+        
+            
         }
         break;
         default:
